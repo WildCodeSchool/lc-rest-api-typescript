@@ -4,8 +4,12 @@
   "description": "## Steps",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "npm run dev",
+    "build": "tsc",
+    "lint": "eslint . & echo 'lint complete'",
+    "dev": "ts-node-dev --transpile-only --respawn  ./src/server.ts",
+    "prod": "tsc && node ./built/src/server.js",
+    "debug": "tsc && node --inspect ./built/src/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +21,9 @@
     "save": "^2.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
   }
 }

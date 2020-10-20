@@ -6,3 +6,4 @@
 
 - project structure
 - tsconfig
+- install packages and write package.json

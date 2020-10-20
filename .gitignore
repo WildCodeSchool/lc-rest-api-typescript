@@ -1,3 +1,6 @@
+# node built directory
+built
+
 # Logs
 logs
 *.log
