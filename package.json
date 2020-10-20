@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "build": "tsc",
-    "lint": "eslint . & echo 'lint complete'",
+    "lint": "eslint . ",
+    "lint-fix": "eslint --fix . ",
     "dev": "ts-node-dev --transpile-only --respawn  ./src/server.ts",
     "prod": "tsc && node ./built/src/server.js",
     "debug": "tsc && node --inspect ./built/src/server.js"

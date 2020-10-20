@@ -1,4 +1,4 @@
-const WilderModel = require("../models/Wilder");
+const WilderModel = require('../models/Wilder');
 
 module.exports = {
   create: async (req, res) => {
