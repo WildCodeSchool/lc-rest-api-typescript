@@ -1,0 +1,12 @@
+PUT http://localhost:5000/api/wilders HTTP/1.1
+content-type: application/json
+
+{
+    "_id": "5f340656dea1ce62e3f18b35",
+    "name":"A new name",
+    "city": "Londres",
+    "skills":[
+        {"title":"express", "votes":5},
+        {"title":"mongo", "votes":12}
+    ]
+}
