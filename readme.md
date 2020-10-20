@@ -5,3 +5,4 @@
 ### Setup
 
 - project structure
+- tsconfig
