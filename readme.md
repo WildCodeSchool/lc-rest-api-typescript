@@ -10,3 +10,4 @@
 - Adding Express types
 - eslint configuration
 - lint and fix
+- eslint ignore files
