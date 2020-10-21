@@ -17,3 +17,4 @@
 - fix import
 - typing the controller
 - typing the model
+- type guard for mongo error

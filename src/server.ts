@@ -1,5 +1,4 @@
-import express, { Request, Response } from 'express';
-
+import express, { NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import asyncHandler from 'express-async-handler';
 import cors from 'cors';
@@ -41,11 +40,26 @@ app.get('*', (req, res) => {
   res.send({ success: false, message: 'Wrong adress' });
 });
 
-// TODO Using error:any for now, we'll investigate later
-app.use((error, req: Request, res: Response) => {
-  if (error.name === 'MongoError' && error.code === 11000) {
-    res.status(400);
-    res.json({ success: false, message: 'The name is already used' });
+interface MongoError extends Error {
+  code: number;
+}
+
+function isMongoError(error: Error): error is MongoError {
+  return error.name === 'MongoError';
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+app.use((error: Error, req: Request, res: Response, _next: NextFunction) => {
+  if (isMongoError(error)) {
+    switch (error.code) {
+      case 11000:
+        res.status(400);
+        res.json({ success: false, message: 'The name is already used' });
+        break;
+      default:
+        res.status(400);
+        res.json({ success: false, message: 'An error occured' });
+    }
   }
 });
 
