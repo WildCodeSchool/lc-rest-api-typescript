@@ -7,7 +7,7 @@
       "airbnb-typescript/base",
       "prettier/@typescript-eslint",
       "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
+      "plugin:prettier/recommended"
     ],
     "globals": {
       "Atomics": "readonly",

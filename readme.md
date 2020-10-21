@@ -15,3 +15,4 @@
 ### Converting js to ts
 
 - fix import
+- typing the controller
