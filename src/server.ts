@@ -1,11 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 
-const mongoose = require('mongoose');
-const asyncHandler = require('express-async-handler');
-const cors = require('cors');
+import mongoose from 'mongoose';
+import asyncHandler from 'express-async-handler';
+import cors from 'cors';
 
-const WilderModel = require('./models/Wilder');
-const wilderController = require('./controllers/wilder');
+import wilderController from './controllers/wilder';
 
 const app = express();
 
@@ -17,7 +16,9 @@ mongoose
     useCreateIndex: true, 
     autoIndex: true,
   })
+  // eslint-disable-next-line no-console
   .then(() => console.log('Connected to database'))
+  // eslint-disable-next-line no-console
   .catch((err: Error) => console.log(err));
 
 // Middleware
@@ -41,7 +42,7 @@ app.get('*', (req, res) => {
 });
 
 // TODO Using error:any for now, we'll investigate later
-app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+app.use((error, req: Request, res: Response) => {
   if (error.name === 'MongoError' && error.code === 11000) {
     res.status(400);
     res.json({ success: false, message: 'The name is already used' });
@@ -49,4 +50,5 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Start Server
+// eslint-disable-next-line no-console
 app.listen(5000, () => console.log('Server started on 5000'));

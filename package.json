@@ -23,6 +23,8 @@
     "save": "^2.4.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/mongoose": "^5.7.36",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "eslint": "^7.11.0",

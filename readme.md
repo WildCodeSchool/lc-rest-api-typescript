@@ -11,3 +11,7 @@
 - eslint configuration
 - lint and fix
 - eslint ignore files
+
+### Converting js to ts
+
+- fix import
