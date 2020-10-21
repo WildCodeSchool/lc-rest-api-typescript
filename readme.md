@@ -16,3 +16,4 @@
 
 - fix import
 - typing the controller
+- typing the model
