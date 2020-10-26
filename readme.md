@@ -1,4 +1,4 @@
-# Create a REST api with NodeJs / Express / Mongo
+# Add Typescript to a REST api with NodeJs / Express / Mongo
 
 ## Steps
 
