@@ -1,9 +1,11 @@
+import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import asyncHandler from 'express-async-handler';
 import cors from 'cors';
 
 import wilderController from './controllers/wilder';
+import { isInputError } from './errors/InputError';
 
 const app = express();
 
@@ -12,7 +14,7 @@ mongoose
   .connect('mongodb://127.0.0.1:27017/wilderdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true, 
+    useCreateIndex: true,
     autoIndex: true,
   })
   // eslint-disable-next-line no-console
@@ -60,6 +62,9 @@ app.use((error: Error, req: Request, res: Response, _next: NextFunction) => {
         res.status(400);
         res.json({ success: false, message: 'An error occured' });
     }
+  }
+  if (isInputError(error)) {
+    res.json({ success: false, message: 'An input error occured', error });
   }
 });
 

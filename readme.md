@@ -18,3 +18,7 @@
 - typing the controller
 - typing the model
 - type guard for mongo error
+
+### Handling request errors
+
+- raising error on create
