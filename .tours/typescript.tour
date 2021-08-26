@@ -1,0 +1,75 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Typescript",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Read this article to discover how to move your js project to TypeScript step by step\n\nhttps://www.twilio.com/blog/move-to-typescript"
+    },
+    {
+      "file": "package.json",
+      "line": 31,
+      "description": "After installing typescript with:\n\n```\nnpm install -D typescript\n```\n\nCheck that it has been added as a devDependency",
+      "title": "Install typescript"
+    },
+    {
+      "file": "package.json",
+      "line": 7,
+      "description": "Now add a new script to use Typescript in your project.\n\nOnce this script is added, use it to create a configuration file:\n\n```\nnpm run build -- --init\n```",
+      "title": "build script"
+    },
+    {
+      "file": "tsconfig.json",
+      "line": 1,
+      "description": "A configuration file named tsconfig.json has been created, go to https://www.staging-typescript.org/tsconfig to understand the different options"
+    },
+    {
+      "file": "package.json",
+      "selection": {
+        "start": {
+          "line": 22,
+          "character": 5
+        },
+        "end": {
+          "line": 28,
+          "character": 39
+        }
+      },
+      "description": "ESLint is what is called a `Linter`. The goal of these tools is to ensure that all the developpers of a project use the same coding style, for example: single quotes or double quotes.\n\nGo to https://eslint.org/ to learn more about Eslint.\n\nAirbnb published a very popular list of rules, named `styleguide` for eslint, they are also installed here as npm devDependencies.\n\nAfter installing these dependencies, create a configuration file for eslint:\n\n```\nnpx eslint --init\n```\n",
+      "title": "Added eslint dependencies"
+    },
+    {
+      "file": ".eslintrc.js",
+      "description": "`.eslintrc.js` has been created, now we use in this file the rules we previously installed",
+      "line": 10
+    },
+    {
+      "file": ".eslintrc.js",
+      "description": "You can customize the rules as you like, for example here we stated that we allow using `underscore` on properties only if the property is called `_id`",
+      "line": 15,
+      "title": "customize rules"
+    },
+    {
+      "file": "package.json",
+      "description": "Now that `eslint` is installed and configured, you can use it with this script, it should show you errors syntaxt errors in the console.\n\nYou can also install this plugin to view the syntax errors directly in vscode: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
+      "line": 9,
+      "title": "lint script"
+    },
+    {
+      "file": "package.json",
+      "description": "prettier is a `code formatter`. Go to https://prettier.io/ to learn more about prettier\n\nThe goal of this tool is to format the code for you when press ctrl + s. To do so, install this vscode extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode and configure prettier as your default formatter in vscode and click the \"format on save\" option.\n\nIt integrates with `eslint` so it will correct automatically all fixable syntax errors you might type.",
+      "line": 29,
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 6
+        },
+        "end": {
+          "line": 29,
+          "character": 14
+        }
+      },
+      "title": "Added prettier dependency"
+    }
+  ]
+}
