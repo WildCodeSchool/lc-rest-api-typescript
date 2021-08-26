@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "ts-node-dev src/server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "mongoose": "^6.0.0"
   },
   "devDependencies": {
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.3.5"
   }
 }
