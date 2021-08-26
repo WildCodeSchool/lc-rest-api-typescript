@@ -18,6 +18,6 @@ module.exports = {
     tsconfigRootDir: './',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: { 'no-underscore-dangle': ['error', { allow: ['_id'] }] },
   ignorePatterns: ['.eslintrc.js'],
 };
