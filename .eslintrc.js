@@ -3,13 +3,7 @@ module.exports = {
     browser: false,
     es2021: true,
   },
-  extends: [
-    'airbnb-base',
-    'airbnb-typescript/base',
-    'prettier',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['airbnb-base', 'airbnb-typescript/base'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
@@ -17,7 +11,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: './',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: { 'no-underscore-dangle': ['error', { allow: ['_id'] }] },
   ignorePatterns: ['.eslintrc.js'],
 };
