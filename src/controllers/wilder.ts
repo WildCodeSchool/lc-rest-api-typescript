@@ -1,5 +1,5 @@
-import WilderModel from "../models/Wilder";
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
+import WilderModel from '../models/Wilder';
 
 const wilderController = {
   create: async (req: Request, res: Response) => {
@@ -24,7 +24,7 @@ const wilderController = {
     WilderModel.updateOne({ _id: req.body._id }, req.body)
       .then((result) => {
         if (!result)
-          res.json({ success: false, result: "No such wilder exists" });
+          res.json({ success: false, result: 'No such wilder exists' });
 
         res.json(result);
       })
@@ -38,7 +38,7 @@ const wilderController = {
         if (!result)
           res.json({
             success: false,
-            result: "No wilder with such ID was found",
+            result: 'No wilder with such ID was found',
           });
         res.json({ success: true, result });
       })
