@@ -1,7 +1,8 @@
-const WilderModel = require("../models/Wilder");
+import WilderModel from "../models/Wilder";
+import { Request, Response } from "express";
 
-module.exports = {
-  create: async (req, res) => {
+const wilderController = {
+  create: async (req: Request, res: Response) => {
     try {
       await WilderModel.init();
       const wilder = new WilderModel(req.body);
@@ -11,7 +12,7 @@ module.exports = {
       res.json({ success: false, result: err });
     }
   },
-  read: async (req, res) => {
+  read: async (req: Request, res: Response) => {
     try {
       const result = await WilderModel.find();
       res.json({ success: true, result });
@@ -19,7 +20,7 @@ module.exports = {
       res.json({ success: false, result: err });
     }
   },
-  update: (req, res) => {
+  update: (req: Request, res: Response) => {
     WilderModel.update({ _id: req.body._id }, req.body)
       .then((result) => {
         if (!result)
@@ -31,7 +32,7 @@ module.exports = {
         res.json({ success: false, result: err });
       });
   },
-  delete: (req, res) => {
+  delete: (req: Request, res: Response) => {
     WilderModel.deleteOne({ _id: req.body._id })
       .then((result) => {
         if (!result)
@@ -44,3 +45,5 @@ module.exports = {
       .catch((err) => res.json({ success: false, result: err }));
   },
 };
+
+export default wilderController;
