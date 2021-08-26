@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
-const wilderController = require("./controllers/wilder");
+import wilderController from "./controllers/wilder";
+
 const app = express();
 
 //Database
