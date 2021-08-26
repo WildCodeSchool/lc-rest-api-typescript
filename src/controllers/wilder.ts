@@ -21,7 +21,7 @@ const wilderController = {
     }
   },
   update: (req: Request, res: Response) => {
-    WilderModel.update({ _id: req.body._id }, req.body)
+    WilderModel.updateOne({ _id: req.body._id }, req.body)
       .then((result) => {
         if (!result)
           res.json({ success: false, result: "No such wilder exists" });
