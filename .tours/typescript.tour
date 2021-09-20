@@ -9,13 +9,13 @@
     {
       "file": "package.json",
       "line": 31,
-      "description": "After installing typescript with:\n\n```\nnpm install -D typescript\n```\n\nCheck that it has been added as a devDependency",
+      "description": "Typescript was installed with:\n\n```\nnpm install -D typescript\n```\n\nIt has been added as a devDependency",
       "title": "Install typescript"
     },
     {
       "file": "package.json",
       "line": 7,
-      "description": "Now add a new script to use Typescript in your project.\n\nOnce this script is added, use it to create a configuration file:\n\n```\nnpm run build -- --init\n```",
+      "description": "A new script to use Typescript in your project has been added.\n\nOnce this script is added, we can use it to create a configuration file:\n\n```\nnpm run build -- --init\n```",
       "title": "build script"
     },
     {
@@ -35,13 +35,13 @@
           "character": 39
         }
       },
-      "description": "ESLint is what is called a `Linter`. The goal of these tools is to ensure that all the developpers of a project use the same coding style, for example: single quotes or double quotes.\n\nGo to https://eslint.org/ to learn more about Eslint.\n\nAirbnb published a very popular list of rules, named `styleguide` for eslint, they are also installed here as npm devDependencies.\n\nAfter installing these dependencies, create a configuration file for eslint:\n\n```\nnpx eslint --init\n```\n",
+      "description": "ESLint is what is called a `Linter`. The goal of these tools is to ensure that all the developpers of a project use the same coding style, for example: single quotes or double quotes.\n\nGo to https://eslint.org/ to learn more about Eslint.\n\nAirbnb published a very popular list of rules, named `styleguide` for eslint, they are also installed here as npm devDependencies.\n\nAfter installing these dependencies, a configuration file for eslint can be created with:\n\n```\nnpx eslint --init\n```\n",
       "title": "Added eslint dependencies"
     },
     {
       "file": ".eslintrc.js",
-      "description": "`.eslintrc.js` has been created, now we use in this file the rules we previously installed",
-      "line": 10
+      "description": "`.eslintrc.js` has been created, now we use in this file the rules we previously installed (airbnb styleguide, ...)",
+      "line": 6
     },
     {
       "file": ".eslintrc.js",
@@ -51,7 +51,7 @@
     },
     {
       "file": "package.json",
-      "description": "Now that `eslint` is installed and configured, you can use it with this script, it should show you errors syntaxt errors in the console.\n\nYou can also install this plugin to view the syntax errors directly in vscode: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
+      "description": "Now that `eslint` is installed and configured, you can use it with this script, it should show you syntax errors in the console.\n\nYou can also install this plugin to view the syntax errors directly in vscode: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
       "line": 9,
       "title": "lint script"
     },
