@@ -1,8 +1,12 @@
 import { Request, Response } from 'express';
 import WilderModel from '../models/Wilder';
 
-const wilderController = {
-  create: async (req: Request, res: Response): Promise<void> => {
+interface IHandlers {
+  [key: string]: (req: Request, res: Response) => Promise<void> | void;
+}
+
+const wilderController: IHandlers = {
+  create: async (req, res) => {
     try {
       await WilderModel.init();
       const wilder = new WilderModel(req.body);
@@ -12,7 +16,7 @@ const wilderController = {
       res.json({ success: false, result: err });
     }
   },
-  read: async (req: Request, res: Response): Promise<void> => {
+  read: async (_, res) => {
     try {
       const result = await WilderModel.find();
       res.json({ success: true, result });
@@ -20,7 +24,7 @@ const wilderController = {
       res.json({ success: false, result: err });
     }
   },
-  update: (req: Request, res: Response): void => {
+  update: (req, res) => {
     WilderModel.updateOne({ _id: req.body._id }, req.body)
       .then((result) => {
         if (!result) {
@@ -33,7 +37,7 @@ const wilderController = {
         res.json({ success: false, result: err });
       });
   },
-  delete: (req: Request, res: Response): void => {
+  delete: (req, res) => {
     WilderModel.deleteOne({ _id: req.body._id })
       .then((result) => {
         if (!result) {
